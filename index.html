@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+
+    <link rel="icon" href="./imgs/logo.png">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div class="lodingPage position-fixed top-0 bottom-0 start-0 end-0 bg-black d-flex align-items-center justify-content-center">
+    <i class="fa fa-spinner fa-spin fa-5x text-white"></i>
+  </div>
+    
+    <div class="leftMenu d-flex position-fixed">
+
+      <div class="sideNav d-flex flex-column justify-content-between  p-4">
+        <div class="navLinks">
+          <ul class="p-0">
+            <li onclick="backToTop(); getMovies('now_playing');">Now Playing</li>
+            <li onclick="backToTop(); getMovies('popular');">Popular</li>
+            <li onclick="backToTop(); getMovies('top_rated');">Top Rated</li>
+            <li onclick="backToTop(); getTrending();">Trending</li>
+            <li onclick="backToTop(); getMovies('upcoming');">Upcoming</li>
+            <li><a class="text-decoration-none text-white" href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="navFooter text-white">
+          <div class="icons">
+            <i class="fa-brands fa-facebook me-2"></i>
+            <i class="fa-brands fa-twitter me-2"></i>
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <p class="text-secondary">Copyright Â© 2023 All Rights Reserved.</p>
+          <p class="text-secondary">Created by <a class="text-danger" href="#">Mamdouh Sawy</a></p>
+        </div>
+      </div>
+
+      <div class="open-close-nav vh-100 bg-white py-4 px-3 d-flex flex-column justify-content-between">
+        <img src="./imgs/logo.png" style="width: 30px;" alt="">
+        <i class="fa-solid fa-bars fs-4 text-center open-close-icon" is-open="f"></i>
+        <div class="text-center">
+          <i class="fa-solid fa-globe d-block"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="container pt-5">
+      <input onkeyup="searchMovie(this.value);" type="text" class="form-control bg-transparent w-50 mx-auto rounded-5 text-white border-2 border-white shadow-none mb-3" id="searchBox" placeholder="Search">
+
+      <div class="row g-4 mt-3 movies">
+        
+      </div>
+    </div>
+
+
+    <section id="contact" class="container text-white py-5">
+      <h2>Contact US</h2>
+      <form>
+          <div class="row mt-3">
+              <div class="col-md-6">
+                  <input type="text" required="required" id="name" maxlength="37" class="form-control mt-4 shadow-none" placeholder="Enter Your Name" style="border-bottom-color: rgb(206, 212, 218);">
+                  <span class="d-none text-danger" id="name">Invalid Name , only Characters allowed</span>
+              </div>
+              <div class="col-md-6">
+                  <input type="email" required="required" id="email" class="form-control mt-4 shadow-none" placeholder="Enter Your Email">
+                  <span class="d-none text-danger" id="email">Invalid Email , try example@domain.com</span>
+              </div>
+              <div class="col-md-6">
+                  <input type="number" required="required" id="phone" class="form-control mt-4 shadow-none" placeholder="Enter Your Phone">
+                  <span class="d-none text-danger" id="phone">Invalid Phone Number</span>
+              </div>
+              <div class="col-md-6">
+                  <input type="number" required="required" id="age" class="form-control mt-4 shadow-none" placeholder="Enter Your Age">
+                  <span class="d-none text-danger" id="age">Your age must be over 16+</span>
+              </div>
+              <div class="col-md-6 position-relative">
+                  <input type="password" required="required" id="password" class="form-control mt-4 shadow-none" placeholder="Enter Your Password">
+                  <span class="d-none text-danger" id="password">password must contain numbers & letters at least 8 character</span>
+              </div>
+              <div class="col-md-6">
+                  <input type="password" required="required" id="repassword" class="form-control mt-4 shadow-none" placeholder="ReEnter Password">
+                  <span class="d-none text-danger" id="repassword">Password not match</span>
+              </div>
+              <div class="col-md-12  mt-4">
+                  <button type="submit" class="btn btn-outline-light border-0 px-4 py-2 rounded-2 mb-3">Submit</button>
+              </div>
+          
+      </div></form>
+  </section>
+
+  <button id="btnUp" class="btn bg-black rounded-pill d-none">
+    </path></svg><i class="fa-solid fa-arrow-up text-white"></i>
+</button>
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
